@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="C971.DetailedTermPage">
+    <ContentPage.Content>
+        <StackLayout>
+            
+            <Frame x:Name="detailedTermFrame"
+                BackgroundColor="#2196F3" Padding="5" CornerRadius="0">
+                <Label x:Name="detailedTermLabel"
+                    Text="{Binding title}" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+            </Frame>
+
+            <ListView x:Name="coursesListView"
+                      ItemSelected="coursesListView_ItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding title}"
+                              Detail="{Binding startDate, StringFormat='{0:MM/dd/yyyy}'}" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <Button x:Name="viewDetailedCoursesButton"
+                    Text="View Selected Course"
+                    VerticalOptions="StartAndExpand"
+                    Clicked="viewDetailedCoursesButton_Clicked" />
+
+            <Button x:Name="editCoursesButton"
+                    Text="Edit Selected Course"
+                    VerticalOptions="StartAndExpand"
+                    Clicked="editCoursesButton_Clicked" />
+
+            <Button x:Name="addCoursesButton"
+                    Text="Add Course"
+                    VerticalOptions="StartAndExpand"
+                    Clicked="addCoursesButton_Clicked" />
+
+            <Button x:Name="deleteCoursesButton"
+                    Margin="0, 0, 0, 10"
+                    Text="Delete Course"
+                    VerticalOptions="StartAndExpand"
+                    Clicked="deleteCoursesButton_Clicked" />
+
+            <Grid  Padding="0, 10, 0, 0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50" />
+                </Grid.RowDefinitions>
+                <Label x:Name="startDateLabel" 
+                   Text="Start:"
+                   VerticalOptions="Start"
+                   HorizontalOptions="Start" 
+                       FontSize="Medium"
+                   TextColor="#2196F3"/>
+
+                <DatePicker x:Name="startDatePicker"
+                           Margin="0, 10, 0, 0"
+                        IsEnabled="False"
+                        Date="{Binding startDate, StringFormat='{0:MM/dd/yyyy}'}" 
+                        VerticalOptions="StartAndExpand"
+                        HorizontalOptions="StartAndExpand" />
+
+                <Label x:Name="endDateLabel" 
+                   Text="End:"
+                   VerticalOptions="StartAndExpand"
+                   HorizontalOptions="EndAndExpand" 
+                       Margin="0, 0, 60, 0"
+                       FontSize="Medium"
+                   TextColor="#2196F3"/>
+
+                <DatePicker x:Name="endDatePicker"
+                           Margin="0,10, 0, 0"
+                        IsEnabled="False"
+                        Date="{Binding endDate, StringFormat='{0:MM/dd/yyyy}'}" 
+                        VerticalOptions="StartAndExpand"
+                        HorizontalOptions="EndAndExpand" />
+
+            </Grid>
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="C971.MainPage">
+
+    <StackLayout>
+        <Frame BackgroundColor="#2196F3" Padding="5" CornerRadius="0">
+            <Label Text="Terms" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+        </Frame>
+        
+        <ListView x:Name="termsListView"
+                  ItemSelected="termsListView_ItemSelected">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding title}"
+                              Detail="{Binding startDate, StringFormat='{0:MM/dd/yyyy}'}" 
+                              TextColor="#2196F3"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <Button x:Name="viewTermButton"
+                Text="View Selected Term"
+                Clicked="viewTermButton_Clicked" />
+
+        <Button x:Name="addTermButton"
+                Text="Add Term"
+                Clicked="addTermButton_Clicked" />
+
+        <Button x:Name="deleteTermButton"
+                Text="Delete Term"
+                Clicked="deleteTermButton_Clicked" />
+    </StackLayout>
+
+</ContentPage>

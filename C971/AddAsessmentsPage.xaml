@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="C971.AddAsessmentsPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame x:Name="assessmenFrame"
+                BackgroundColor="#2196F3" Padding="0" CornerRadius="0">
+                <Label x:Name="addAsessmentsLabel"
+                    Text="Add Assessment" HorizontalTextAlignment="Center" TextColor="White" FontSize="32"/>
+            </Frame>
+
+            <Entry x:Name="titleEntry" 
+                   Placeholder="Enter Assessment Title" 
+                   MaxLength="15"
+                   Margin="0, 10, 0, 0"/>
+
+            <Label x:Name="pickerLabel"
+                   Text="Assessment Type:"
+                   FontAttributes="Bold"
+                   TextColor="#2196F3"
+                   Padding="0, 30, 0, 0"/>
+            <Picker x:Name="typePicker">
+                <Picker.Items>
+                    <x:String>Objective Assessment</x:String>
+                    <x:String>Project Assessment</x:String>
+                </Picker.Items>
+            </Picker>
+
+            <Grid Padding="0, 60">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="60" />
+                </Grid.RowDefinitions>
+                <Label x:Name="NotificationsLabel"
+                           Text="Enable Notifications?"
+                           FontSize="Subtitle"
+                           TextColor="Black"
+                           Grid.Column="0"/>
+                <Switch x:Name="EnableNotifications"
+                            IsToggled="False"
+                            Grid.Column="1"
+                        Margin="0, 0, 0, 30"/>
+            </Grid>
+
+            <Label Text="End Date:" 
+                   FontAttributes="Bold"
+                   TextColor="#2196F3"
+                   Padding="0, 30, 0, 0"
+                   VerticalOptions="EndAndExpand"/>
+            <DatePicker x:Name="endDatePicker" 
+                        VerticalOptions="End"
+                        Margin="0"/>
+            <Button x:Name="saveButton"
+                    Text="Save"
+                    Clicked="saveButton_Clicked"
+                    VerticalOptions="End"
+                    Margin="0, 30, 0, 0"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

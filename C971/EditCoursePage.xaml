@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="C971.EditCoursePage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame x:Name="detailedTermFrame"
+                BackgroundColor="#2196F3" Padding="5" CornerRadius="0">
+                <Label x:Name="detailedTermLabel"
+                    Text="Add Course" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+            </Frame>
+
+            <Entry x:Name="courseTitleEntry" 
+                   Placeholder="Add Course Title"
+                   MaxLength="15" 
+                   Margin="0,10, 0, 0"/>
+
+            <Label x:Name="activityLabel"
+                   Text="Activity status:"
+                   FontAttributes="Bold"
+                   TextColor="#2196F3"
+                   Padding="0, 20, 0, 0"/>
+            <Picker x:Name="activityPicker">
+                <Picker.Items>
+                    <x:String>Not Started</x:String>
+                    <x:String>Plane to take</x:String>
+                    <x:String>In Progress</x:String>
+                    <x:String>Completed</x:String>
+                    <x:String>Dropped</x:String>
+                </Picker.Items>
+            </Picker>
+
+            <Label x:Name="instructLabel"
+                   Text="Enter instructor info:"
+                   FontAttributes="Bold"
+                   TextColor="#2196F3"
+                   Padding="0, 20, 0, 0"/>
+            <Entry x:Name="instructnameEntry" 
+                   Placeholder="Add Instructor Name"
+                   FontSize="Small"
+                   MaxLength="20" 
+                   Margin="0, 0, 0, 0"/>
+
+            <Entry x:Name="instructemailEntry" 
+                   Placeholder="Add Instructor Email"
+                   FontSize="Small"
+                   MaxLength="30" 
+                   Margin="0, 0, 0, 0"/>
+
+            <Entry x:Name="instructPhoneEntry" 
+                   Placeholder="Add Instructor Phone"
+                   FontSize="Small"
+                   MaxLength="12" 
+                   Margin="0, 0, 0, 0"/>
+
+            <Editor x:Name="notesEditor" 
+                   Placeholder="Enter notes..."
+                    MaxLength="75"
+                    Margin="0, 20, 0, 0"/>
+
+            <Label Text="Start Date:"
+                   FontAttributes="Bold"
+                   TextColor="#2196F3"
+                   Padding="0, 30, 0, 0"/>
+            <DatePicker x:Name="startDatePicker" 
+                        FontSize="Small"/>
+            <Label Text="End Date:"
+                   FontAttributes="Bold"
+                   TextColor="#2196F3"
+                   Padding="0, 0, 0, 0"/>
+            <DatePicker x:Name="endDatePicker" 
+                        FontSize="Small"/>
+
+            <Button x:Name="saveButton"
+                    Text="Save"
+                    Clicked="saveButton_Clicked"
+                    VerticalOptions="EndAndExpand"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

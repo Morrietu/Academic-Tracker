@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="C971.AddTermsPage">
+    <ContentPage.Content>
+        <StackLayout Padding="0, 0, 0, 0">
+            <Frame x:Name="detailedTermFrame"
+                BackgroundColor="#2196F3" Padding="0" CornerRadius="0">
+                <Label x:Name="detailedTermLabel"
+                    Text="Add Term" HorizontalTextAlignment="Center" TextColor="White" FontSize="32"/>
+            </Frame>
+            <Entry x:Name="addType"
+                   Placeholder="Add Term Title"
+                   Margin="0, 20, 0, 0"
+                   MaxLength="15"/>
+            
+            <Label Text="Start Date:" 
+                   Padding="0, 30, 0, 0"
+                   FontSize="Medium"
+                   FontAttributes="Bold"
+                   TextColor="#2196F3"/>
+            <DatePicker x:Name="startDatePicker" />
+            <Label Text="End Date:" 
+                   Padding="0, 30, 0, 0"
+                   FontSize="Medium"
+                   FontAttributes="Bold"
+                   TextColor="#2196F3"/>
+            <DatePicker x:Name="endDatePicker" />
+            <Button x:Name="saveButton"
+                    Text="Save"
+                    Clicked="saveButton_Clicked"
+                    VerticalOptions="EndAndExpand"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
